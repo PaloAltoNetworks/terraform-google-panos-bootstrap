@@ -68,6 +68,18 @@ variable "dgname" {
   type        = string
 }
 
+variable "dns-primary" {
+  default     = ""
+  description = "The IP address of the primary DNS server"
+  type        = string
+}
+
+variable "dns-secondary" {
+  default     = ""
+  description = "The IP address of the secondary DNS server"
+  type        = string
+}
+
 variable "vm-auth-key" {
   default     = ""
   description = "Virtual machine authentication key"
