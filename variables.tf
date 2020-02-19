@@ -40,34 +40,34 @@ variable "bootstrap_directories" {
 
 variable "hostname" {
   description = "The hostname of the VM-series instance"
-  type = string
+  type        = string
 }
 
 variable "panorama-server" {
   description = "The FQDN or IP address of the primary Panorama server"
-  type = string
+  type        = string
 }
 
 variable "panorama-server2" {
   description = "The FQDN or IP address of the secondary Panorama server"
-  type = string
+  type        = string
 }
 
 variable "tplname" {
   description = "The Panorama template stack name"
-  type = string
+  type        = string
 }
 
-variable = "dgname" {
+variable "dgname" {
   description = "The Panorama device group name"
-  type = string
+  type        = string
 }
 
-variable = "vm-auth-key" {
+variable "vm-auth-key" {
   description = "Virtual machine authentication key"
-  type = string
+  type        = string
 }
 
-variable = "op-command-modes" {
+variable "op-command-modes" {
   description = "Set jumbo-frame and/or mgmt-interface-swap"
 }
