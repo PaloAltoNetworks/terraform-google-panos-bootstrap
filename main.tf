@@ -54,10 +54,10 @@ resource "google_storage_bucket_object" "init_cfg" {
 }
 
 resource "google_storage_bucket_object" "bootstrap_files" {
-  for_each = fileset("${path.cwd}/files", "**")
+  for_each = fileset("${path.root}/files", "**")
 
   name   = each.value
-  source = "${path.cwd}/files/${each.value}"
+  source = "${path.root}/files/${each.value}"
   bucket = google_storage_bucket.bootstrap.name
 }
 
