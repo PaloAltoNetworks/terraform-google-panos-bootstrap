@@ -37,7 +37,7 @@ resource "google_storage_bucket_object" "bootstrap_dirs" {
 
 resource "google_storage_bucket_object" "init_cfg" {
   name = "config/init-cfg.txt"
-  content = templatefile("${path.module}/init-cfg.tmpl",
+  content = templatefile("${path.cwd}/init-cfg.tmpl",
     {
       "hostname"         = var.hostname,
       "panorama-server"  = var.panorama-server,
@@ -54,10 +54,10 @@ resource "google_storage_bucket_object" "init_cfg" {
 }
 
 resource "google_storage_bucket_object" "bootstrap_files" {
-  for_each = fileset("${path.module}/files", "**")
+  for_each = fileset("${path.cwd}/files", "**")
 
   name   = each.value
-  source = "${path.module}/files/${each.value}"
+  source = "${path.cwd}/files/${each.value}"
   bucket = google_storage_bucket.bootstrap.name
 }
-  
+
