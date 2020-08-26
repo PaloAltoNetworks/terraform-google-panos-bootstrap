@@ -59,4 +59,3 @@ resource "google_storage_bucket_object" "bootstrap_files" {
   source = "${path.root}/files/${each.value}"
   bucket = google_storage_bucket.bootstrap.name
 }
-
