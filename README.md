@@ -29,17 +29,17 @@ provider "google" {
 }
 
 module "panos-bootstrap" {
-  source  = "stealthllama/panos-bootstrap/google"
-  version = "1.0.x"
+  source  = "PaloAltoNetworks/panos-bootstrap/google"
+  version = "1.0.0"
 
   bootstrap_project     = var.bootstrap_project
   bootstrap_region      = var.bootstrap_region
 
-  hostname         = "gcp-firewall"
+  hostname         = "my-firewall"
   panorama-server  = "panorama1.example.org"
   panorama-server2 = "panorama2.example.org"
-  tplname          = "GCP Firewall Template"
-  dgname           = "GCP Firewalls"
+  tplname          = "My Firewall Template"
+  dgname           = "My Firewalls"
   vm-auth-key      = "supersecretauthkey"
 }
 ```
@@ -117,6 +117,6 @@ resource "google_compute_instance" "firewall" {
 
 
 ## References
-* [VM-Series Firewall Bootstrap Workflow](https://docs.paloaltonetworks.com/vm-series/9-1/vm-series-deployment/bootstrap-the-vm-series-firewall/vm-series-firewall-bootstrap-workflow.html#id59fe5979-c29d-42aa-8e72-14a2c12855f6)
-* [Bootstrap the VM-Series Firewall on Google Cloud Platform](https://docs.paloaltonetworks.com/vm-series/9-1/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-on-google.html#id17CRC0V0TR0)
-* [Prepare the Bootstrap Package](https://docs.paloaltonetworks.com/vm-series/9-1/vm-series-deployment/bootstrap-the-vm-series-firewall/prepare-the-bootstrap-package.html#id5575318c-1de8-497a-960a-1d7417feefa6)
+* [VM-Series Firewall Bootstrap Workflow](https://docs.paloaltonetworks.com/vm-series/10-0/vm-series-deployment/bootstrap-the-vm-series-firewall/vm-series-firewall-bootstrap-workflow.html#id59fe5979-c29d-42aa-8e72-14a2c12855f6)
+* [Bootstrap the VM-Series Firewall on Google Cloud Platform](https://docs.paloaltonetworks.com/vm-series/10-0/vm-series-deployment/bootstrap-the-vm-series-firewall/bootstrap-the-vm-series-firewall-on-google.html#id17CRC0V0TR0)
+* [Prepare the Bootstrap Package](https://docs.paloaltonetworks.com/vm-series/10-0/vm-series-deployment/bootstrap-the-vm-series-firewall/prepare-the-bootstrap-package.html#id5575318c-1de8-497a-960a-1d7417feefa6)
